@@ -1,0 +1,70 @@
+<!--页面大框架-->
+<view>
+  <!--轮播图-->
+  <view class="slides">
+    <swiper
+      class="swiper"
+      autoplay
+      indicator-dots
+      indicator-color="grey"
+      indicator-active-color="#5E5E5E"
+      circular
+    >
+      <swiper-item wx:for="{{ swiperList }}" wx:key="key">
+        <image mode="widthFix" src="{{ item.imgSrc }}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!--拼车信息-->
+
+  <view class="Acti_List">
+    <!--活动列表-->
+    <view class="Acti">
+      <text>拼车信息</text>
+      <image src="../../icon/list_icon.png" mode="widthFix"></image>
+    </view>
+  </view>
+  
+  <!--输入拼车详情-->
+  <form bindsubmit="formSubmit">
+    <view class="wrap">
+      <view class="item">
+        <view class="words">起点：</view>
+        <view class="search1" bindtap="setDeparture">{{ departure }}</view>
+      </view>
+      <view class="item">
+        <view class="words">终点：</view>
+        <view class="search1" bindtap="setDestination">{{ destination.name }}</view>
+      </view>
+      <view class="item">
+        <view class="words">人数：</view>
+        <input class="search"  placeholder="我这里有x人" name="people_num" value="{{people_num}}"/>
+      </view>
+      <view class="item">
+        <view class="words">人员描述：</view>
+        <input class="search" placeholder="性别及其他必要情况描述"  name = "desc" value="{{desc}}"/>
+      </view>
+      <view class="item">
+        <view class="words">乘车时间：</view>
+        <input class="search" placeholder="年-月-日-时-分" name="time_to_get" value="{{time_to_get}}"/>
+      </view>
+      <view class="item">
+        <view class="words">上车地点：</view>
+        <view class="search1" bindtap="setGetCarPlace">{{ getCarPlace }}</view>
+      </view>
+      <view class="item">
+        <view class="words">预约车牌号：</view>
+        <input class="search" placeholder="未预约 / 川12345" name="car_num" value="{{car_num}}"/>
+      </view>
+      <view class="item">
+        <view class="words">联系方式：</view>
+        <input class="search" placeholder="电话12345678910"  name="phone" value="{{phone}}"/>
+      </view>
+    </view>
+
+    <view class="save_style">
+        <button formType="submit" class="save_btn">匹配</button>
+    </view>
+  </form>
+</view>
