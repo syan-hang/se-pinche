@@ -1,0 +1,31 @@
+.title {
+  display: flex;
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+}
+.circle {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #15b897;
+  margin-right: 10rpx;
+  margin-top: 7rpx;
+}
+.item {
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: #666666;
+  letter-spacing: 5rpx;
+}
+.item_wrap {
+  width: 98%;
+  height: 260rpx;
+  border: #c4c4c4 solid;
+  border-width: 1rpx;
+  margin-bottom: 20rpx;
+  margin-left: 7rpx;
+  padding-top: 5rpx;
+  border-radius: 15rpx !important;
+}
